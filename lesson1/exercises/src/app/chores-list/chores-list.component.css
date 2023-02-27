@@ -1,6 +1,9 @@
-li{
+.chores{
     font-size: 30px;
     color: magenta;
     font-style: italic;
 
+}
+h3{
+    text-decoration: underline;
 }
