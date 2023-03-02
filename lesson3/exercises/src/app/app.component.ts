@@ -44,6 +44,14 @@ export class AppComponent {
        image.style.bottom = '0px';
     }
  }
+
+ edgeCheck(image){
+    if(parseInt(image.style.bottom) <= 10 || parseInt(image.style.bottom) >= 360 || parseInt(image.style.left)<=10 || this.height >=360000 || parseInt(image.style.left)>=360 ){
+    this.color = 'orange'
+  } else {
+    this.color = 'blue'
+  }
+}
  moveRocket(image, direction: string){
   if(direction === 'right'){
     let movement = parseInt(image.style.left) + 10 + 'px';
@@ -60,11 +68,12 @@ export class AppComponent {
   } else if(direction === "down"){
     let movement = parseInt(image.style.bottom) - 10 + 'px';
     image.style.bottom = movement
-    this.height += 10000
+    this.height -= 10000
+  }
+ this.edgeCheck(image)
   }
 
-  }
-
-   }
+  
+}
 
 
